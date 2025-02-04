@@ -7,6 +7,10 @@
 	async function startProgram() {
 	setSpeed(50);
 	await delay(3);
-
+//Green Light
+	setMainLed({ r: 0, g: 255, b: 0});
+	await roll((getHeading() + 90), 30, 3.5);
+	await roll((getHeading() + 90), 30, 2);
+	await Sound.play(true);
 //End Program
 	 }
