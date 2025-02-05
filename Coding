@@ -27,6 +27,8 @@
 await roll((getHeading() + 270), 30, 1);
 	await roll((getHeading() + 270), 30, 1);
 	await Sound.play(true);
-
+	//Sound 3
+	await roll((getHeading() + 335), 30, 1);
+	setMainLed({ r: 0, g: 0, b: 255});
 //End Program
 	 }
