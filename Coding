@@ -1,36 +1,47 @@
 //Team Members: Hayden Hershberger
-//Date: 1.29.2025
+//Date: 2.5.2025
 //Program: Pre Competition
 //Hardware: Bolt #SB-E2F0
 
-//Start Program
+//Start and say Start
+//The Bolt will say and display start, and move to the Green Light
 	async function startProgram() {
+	await scrollMatrixText('Start', { r: 0, g: 255, b: 0 }, 30,);
+	await speak("Start");
 	setSpeed(50);
 	await delay(3);
 //Green Light
+//The Bolt will turn green, and roll over to Sound 1
 	setMainLed({ r: 0, g: 255, b: 0});
 	await roll((getHeading() + 90), 30, 3.5);
 	await roll((getHeading() + 90), 30, 2);
-	await Sound.play(true);
 //Sound 1
+//The Bolt will play a random sound and roll over to Red Light
+	await Sound.play(true);
 	await roll((getHeading() + 45), 30, 2.5);
-	setMainLed({ r: 255, g: 0, b: 0});
 //Red Light
+//The Bolt will turn red and roll over to Sound 2
+	setMainLed({ r: 255, g: 0, b: 0});
 	await roll((getHeading() + 270), 30, 1.25);
 	await roll((getHeading() + 270), 30, 3);
-	await Sound.play(true);
 //Sound 2
+//The Bolt will play a random sound and roll over to Purple Light
+	await Sound.play(true);
 	await roll((getHeading() + 90), 30, 1);
 	await roll((getHeading() + 35), 30, 1);;
-	setMainLed({ r: 255, g: 0, b: 255});
 //Purple Light
-await roll((getHeading() + 270), 30, 1);
+//The Bolt will turn purple and roll over to Sound 3
+	setMainLed({ r: 255, g: 0, b: 255});
 	await roll((getHeading() + 270), 30, 1);
+	await roll((getHeading() + 270), 30, 1);
+//Sound 3
+//The Bolt will play a random sound and roll over to Blue Light
 	await Sound.play(true);
-	//Sound 3
 	await roll((getHeading() + 335), 30, 1);
+//Blue Light
+//The Bolt will turn blue and roll to the End
 	setMainLed({ r: 0, g: 0, b: 255});
-	//Blue Light
 	await roll((getHeading() + 45), 30, 1);
 //End Program
+//The program will end
 	 }
